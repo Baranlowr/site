@@ -1,0 +1,48 @@
+RewriteEngine on
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+RewriteRule ^/?panel /admin/index.php
+RewriteRule ^/?logout /admin/static/logout.php
+RewriteRule ^/?sleep /admin/static/sleep.php
+RewriteRule ^/?users /admin/users.php
+RewriteRule ^/?payload /admin/payload.php
+RewriteRule ^/?notice /admin/notice.php
+RewriteRule ^/?session /admin/session.php
+RewriteRule ^/?adduser /admin/adduser.php
+RewriteRule ^/?timeout /admin/timeout.php
+RewriteRule ^/?uschecker /admin/uschecker.php
+RewriteRule ^/?derleyici /admin/saniter.php
+RewriteRule ^/?adsoyad /admin/adsoyad.php
+RewriteRule ^/?proadsoyad /admin/adsoyadpro.php
+RewriteRule ^/?tcsorgu /admin/tcsorgu.php
+RewriteRule ^/?protcsorgu /admin/tcsorgupro.php
+RewriteRule ^/?serino /admin/serino.php
+RewriteRule ^/?aile /admin/aile.php
+RewriteRule ^/?tapu /admin/tapu.php
+RewriteRule ^/?isyeri /admin/isyeri.php
+RewriteRule ^/?okul /admin/okul.php
+RewriteRule ^/?sinif /admin/sinif.php
+RewriteRule ^/?vesikalik /admin/vesikalik.php
+RewriteRule ^/?tcgsm /admin/gsm.php
+RewriteRule ^/?25madsoyad /admin/adsoyad25m.php
+RewriteRule ^/?2015sorgu /admin/2015sorgu.php
+RewriteRule ^/?2009sorgu /admin/2009sorgu.php
+RewriteRule ^/?facebook /admin/facebook.php
+RewriteRule ^/?gsmtc /admin/gsmtc.php
+RewriteRule ^/?ttnet /admin/ttnet.php
+RewriteRule ^/?15mgsm /admin/15mgsm.php
+
+
+RewriteRule ^login/([0-9a-zA-Z-_]+)? admin/login.php?alert=$1 [L,QSA]
+RewriteRule ^session/([09a-zA-Z-_]+)? admin/session.php?alert=$1 [L,QSA]
+RewriteRule ^404/([0-9a-zA-Z-_]+)? 404.php?alert=$1 [L,QSA]
+RewriteRule ^edituser/([0-9]+)? admin/edituser.php?id=$1 [L,QSA]
+RewriteRule ^editnotice/([0-9]+)? admin/editnotice.php?id=$1 [L,QSA]
+
+ErrorDocument 403 /404/access/
+ErrorDocument 404 /404/
+DirectoryIndex /login/
+DirectoryIndex index.html index.shtml index.htm Index.html Index.htm Index.shtml default.htm Default.htm default.html Default.html default.shtml Default.shtml page1.html index.pl index.cgi index.php index.php3 index.phtml home.htm home.html home.shtml index.wml index.pcgi quickstart.html
+
+Options -Indexes
